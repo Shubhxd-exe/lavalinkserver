@@ -4,10 +4,12 @@ server:
 
 lavalink:
   plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.2"
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.0"
       repository: "https://maven.lavalink.dev/releases"
+
   server:
     password: "youshallnotpass"
+
     sources:
       youtube: false
       bandcamp: true
@@ -23,11 +25,12 @@ plugins:
     allowSearch: true
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
+
     clients:
-      - ANDROID_TESTSUITE
       - MUSIC
       - WEB
-      - TVHTML5EMBEDDED
+      - WEBEMBEDDED
+      - ANDROID
 
 logging:
   level:
