@@ -6,11 +6,10 @@ lavalink:
   plugins:
     - dependency: "dev.lavalink.youtube:youtube-plugin:1.16.0"
       repository: "https://maven.lavalink.dev/releases"
-
   server:
     password: "youshallnotpass"
     sources:
-      youtube: false
+      youtube: false      # disabled — handled by the plugin below
       bandcamp: true
       soundcloud: true
       twitch: true
@@ -21,7 +20,13 @@ lavalink:
 plugins:
   youtube:
     enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
     clients:
+      # FIX: TVHTML5EMBEDDED + ANDROID_TESTSUITE are most reliable for avoiding rate limits
+      - TVHTML5EMBEDDED
+      - ANDROID_TESTSUITE
       - MUSIC
       - WEB
       - WEBEMBEDDED
